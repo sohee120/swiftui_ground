@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct EX11_Slider: View {
+    
+    @State private var count:Float = 0
+    @State private var age:Float = 0
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Form {
+                Slider(value: $count, in: 1...10) {
+                    Text("Count")
+                }
+                Text("Count: \(Int(count))")
+                Slider(value: $age)
+                Text("Age:\(Int(age))")
+            }
+        }//Vs
     }
 }
 
