@@ -7,9 +7,29 @@
 
 import SwiftUI
 
+
 struct EX12_PickerView: View {
+    
+    @State private var pickerName = "Tom"
+    var names: Array<String> = ["Tom","John","Hans","Jun","Jully"]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack{
+            Picker("Choose Name", selection: $pickerName) {
+                ForEach(names, id:\.self) {
+                    Text($0)
+                }
+            }
+            .pickerStyle(.menu)
+            
+            Picker(selection: $pickerName, label:Text("Names")) {
+                ForEach(0..<names.count) {
+                    Text(names[$0])
+                }
+            }
+        }
+        
     }
 }
 
