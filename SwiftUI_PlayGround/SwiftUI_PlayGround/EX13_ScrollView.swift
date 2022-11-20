@@ -1,15 +1,37 @@
-//
 //  EX13_ScrollView.swift
 //  SwiftUI_PlayGround
-//
-//  Created by 윤소희 on 2022/11/15.
-//
+
 
 import SwiftUI
 
 struct EX13_ScrollView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            ScrollView {
+                VStack {
+                    ForEach(1..<31) {idx in
+                        Text("Content\(idx)")
+                            .font(.largeTitle)
+                    }
+                }//VS
+                .frame(maxWidth: .infinity)
+            }
+            .frame(height: 200)
+            .background(.gray)
+            
+            Divider()
+            
+            ScrollView(.horizontal) {
+                HStack{
+                    ForEach(1..<31) {idx in
+                        Text("Content\(idx)")
+                            .font(.largeTitle)
+                    }
+                }
+            }
+            .frame(height: 200)
+            .background(.yellow)
+        }
     }
 }
 
