@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EX_StateBinding: View {
+struct EX15_StateBinding: View {
     
     @State private var sharedData: String = "init value"
     
@@ -49,8 +49,8 @@ struct CustomButton2: View {
 }
 
 
-struct EX_StateBinding_Previews: PreviewProvider {
+struct EX15_StateBinding_Previews: PreviewProvider {
     static var previews: some View {
-        EX_StateBinding()
+        EX15_StateBinding()
     }
 }
